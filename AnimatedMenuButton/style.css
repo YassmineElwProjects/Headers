@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to right, #a146fc, #302b63, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_btn{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu_btn .line{
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform-origin: left;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Close Delay for the menu_btn */
+.menu_btn .middle_line{
+    transition-delay: 0.3s;
+    
+}
+/* Open Delay for the menu_btn */
+.menu_btn.open .middle_line{
+   opacity: 0;
+   transition-delay: 0s;
+}
+
+.menu_btn.open .top_line{
+    transform: rotate(45deg);
+}
+.menu_btn.open .bottom_line{
+    transform: rotate(-45deg);
+}
