@@ -20,7 +20,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  justify-content: space-evenly;
+  gap: 60px;
   
 }
 
@@ -80,7 +80,7 @@ body {
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
   .container .card {
-    max-width: 100%; /* Cards take full width of the container */
+    max-width: 75%; /* Cards take full width of the container */
     height: auto;
     /* Allow card height to adjust */
   }

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach((card) => {
       setTimeout(() => {
         closeCard(card);
-      }, 3000); // 3000 milliseconds = 3 seconds
+      }, 1000); // 3000 milliseconds = 3 seconds
     });
   });
   
