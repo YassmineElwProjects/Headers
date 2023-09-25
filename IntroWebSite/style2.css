@@ -31,6 +31,7 @@ header h4 {
     height: 100vh;
     background-color: #161616;
     transition: 1s;
+    color: #fff;
 }
 
 .logo-header {
@@ -44,19 +45,18 @@ header h4 {
 .logo {
     position: relative;
     display: inline-block;
-    bottom: -20px;
     opacity: 0;
-    transition: ease-in-out 0.5s;
-    color: #fff;
+    transform: rotate(0deg); /* Reset rotation */
+    color: white; /* Start with white color */
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out, color 1s ease-in-out;
 }
 
 .logo.active {
-    bottom: 0;
     opacity: 1;
+    transform: rotate(360deg); /* Rotate 360 degrees */
+    color: #fff; /* Change color during animation */
 }
 
 .logo.fade {
-    bottom: 150px;
     opacity: 0;
-    transition: ease-in-out 0.5s;
 }
