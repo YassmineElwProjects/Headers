@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <title>Heart Animation</title>
+</head>
+
+<body>
+    <iframe id="introIframe" src="../IntroWebSite/index.html" height="1000" width="100%" frameborder="0" scrolling="no""></iframe>
+
+    <!-- JavaScript will add hearts here -->
+
+    <div id="waterContainer" style="">
+        <iframe class="water" src="waterIndex.html" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${Math.random() * 100}vw`;
+            container.appendChild(heart);
+
+            heart.addEventListener('animationiteration', () => {
+                container.removeChild(heart);
+            });
+        }
+
+        // Create hearts at regular intervals
+        setInterval(createHeart, 1000);
+
+        function hideIntro() {
+            const introIframe = document.getElementById('introIframe');
+            const waterContainer = document.getElementById('waterContainer');
+            
+            // Hide the intro iframe
+            introIframe.style.display = 'none';
+            
+            // Show the second iframe
+            waterContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

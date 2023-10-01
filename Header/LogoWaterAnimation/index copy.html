@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Heart Animation</title>
+
+</head>
+<body>
+  <div class="container">
+    <iframe class="water" src="HeatIndex.html" width="100%" height="100%" frameborder="0" scrolling="no"  ></iframe>
+    <div>
+      <iframe src="waterIndex.html" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+    
+  </div>
+
+  <script>
+    const container = document.querySelector('.container');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}vw`;
+      container.appendChild(heart);
+
+      heart.addEventListener('animationiteration', () => {
+        container.removeChild(heart);
+      });
+    }
+
+    // Create hearts at regular intervals
+    setInterval(createHeart, 1000);
+
+  </script>
+</body>
+</html>
